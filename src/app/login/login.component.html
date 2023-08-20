@@ -1,14 +1,38 @@
-<div>
-  <h2>Login</h2>
-  <form>
-    <div>
-      <label for="userid">User ID:</label>
-      <input type="text" id="userid" name="userid" [(ngModel)]="userid">
+<div style=" height: 100%; background-image: url('assets/background.jpg') ;">
+    <div style="  display: flex; justify-content: center; padding-top: 100px; ">
+        <mat-card style="width: 100%">
+            <mat-card-header style="justify-content: center;">
+              <mat-card-title><h1> Welcome to TO-DO Application</h1> </mat-card-title>
+            </mat-card-header>
+        </mat-card>
     </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" [(ngModel)]="password">
+    <div style=" display: flex; justify-content: center; margin-top: 100px;">
+        <mat-card style="width: fit-content; width: 450px;">
+            <mat-card-header style="justify-content: center;">
+              <mat-card-title>Enter Your Credentials </mat-card-title>
+            </mat-card-header>
+            
+                <mat-form-field style="width: 200px; margin-left: 120px; ">
+                  <mat-label>Enter Email ID</mat-label>
+                  <input matInput placeholder="pat@example.com" [formControl]="email"  [(ngModel)]="emailid" >
+                  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                
+                </mat-form-field>
+                <mat-form-field style="width: 200px; margin-left: 120px; ">
+                    <mat-label>Enter your Password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="userpassword" >
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <!-- <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
+                    </button>
+                  </mat-form-field>
+                  <h4 *ngIf="incorrect" style="color: rgb(70, 5, 5);">EmailID Or Password Incorrect."Please Try Again!!"</h4>
+                  <button  style="width: 100px; align-self: center; margin-bottom: 15px;"
+                   (click)="login()"
+                   mat-raised-button color="primary">
+                   
+                   Login</button>
+        </mat-card>
+    
     </div>
-    <button (click)="login()">Login</button>
-  </form>
+    
 </div>

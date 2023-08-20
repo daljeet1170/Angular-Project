@@ -1,11 +1,30 @@
-// data.service.ts
 import { Injectable } from '@angular/core';
+import { user } from './Model/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
 
   constructor() { }
+ 
+  private users :user[] = [
+    { emailid: 'daljeetkaur@gmail.com', password : '789' }
+  ]
+
+  dashboardData : string[] =  [
+    "Hi Welcome to my Dashbord.",  "You have Successfully Log In " ,   "This is my To-DO LIst. "
+  ]
+
+  getUserByemailid(emailid: any): user | undefined {
+    return this.users.find(x => x.emailid == emailid);
+  }
+  
+  getDashboard() : string[] | undefined
+  {
+    return this.dashboardData;
+  }
+
+
+
 }

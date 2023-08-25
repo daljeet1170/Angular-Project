@@ -6,22 +6,13 @@ import { user } from '../Model/user.model';
 import { DataService } from '../data.service';
 import { Route, Router } from '@angular/router';
 
-
-
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  
-
   constructor(private dataservice : DataService , private route : Router){}
-
-
-
   hide = true;
   emailid : any;
   userpassword : any ;
@@ -51,7 +42,7 @@ export class LoginComponent {
     if(this.user.password === this.userpassword)
     {
       console.log("login Successfuly");
-      this.route.navigate(['dashboard']);
+      this.route.navigate(['todolist']);
     }
     else
     {

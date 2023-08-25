@@ -14,8 +14,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 //import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
+import { ToDoListComponent } from './to-do-list/to-do-list.component';
+import { HttpClientModule } from '@angular/common/http';
 //import {MatButtonModule} from '@angular/material/button';
 
 //import {MatInputModule} from '@angular/material/input';
@@ -27,7 +28,7 @@ import { RouterModule } from '@angular/router';
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    ToDoListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +42,8 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,7 +13,7 @@ export class DataService {
   ]
 
   dashboardData : string[] =  [
-    "Hi Welcome to my Dashbord.",  "You have Successfully Log In " ,   "This is my To-DO LIst. "
+    "Hi Welcome to my Dashbord.",  "You have Successfully Log In " ,   "This is my To-DO List. "
   ]
 
   getUserByemailid(emailid: any): user | undefined {
